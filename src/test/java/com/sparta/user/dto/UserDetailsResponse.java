@@ -1,4 +1,4 @@
-package com.sparta.pet.dto;
+package com.sparta.user.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
