@@ -3,10 +3,15 @@ package com.sparta.pet.stepDefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
 
 public class orderStepDefs {
+    static Response response;
+
     @When("I send post request to {string}")
     public void iSendPostRequestTo(String URL) {
+        response = RestAssured.post(URL);
     }
 
     @And("I send Order object as request body")
