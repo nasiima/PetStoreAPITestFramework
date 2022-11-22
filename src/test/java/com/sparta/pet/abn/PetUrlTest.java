@@ -1,6 +1,7 @@
 package com.sparta.pet.abn;
 
 import com.sparta.pet.dto.PetResponse;
+import com.sparta.pet.stepDefinitions.PetStepDefs;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.mapper.ObjectMapperType;
@@ -15,7 +16,10 @@ import static io.restassured.RestAssured.given;
 
 public class PetUrlTest {
 
-   String newPet = "{\n" +
+    int newPetId = Integer.parseInt(null);
+    PetStepDefs petApi;
+
+    String newPet = "{\n" +
            "  \"id\": 0,\n" +
            "  \"category\": {\n" +
            "    \"id\": 0,\n" +
@@ -34,6 +38,7 @@ public class PetUrlTest {
            "  \"status\": \"available\"\n" +
            "}";
 
+
     @Test
     @DisplayName("Status code is correct")
     public void TestStatusCode() {
@@ -51,4 +56,11 @@ public class PetUrlTest {
                 .accept(ContentType.JSON)
                 .contentType(ContentType.JSON).post();
     }
+
+//    @Test
+//    public void fetchAlreadyAvailablePet() {
+//        newPetId = petApi.iAddedANewPet();
+//        petApi.iSearchForPetsId(newPetId);
+//        petApi.theResponseContainsPetsId();
+//    }
 }

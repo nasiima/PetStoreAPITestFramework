@@ -19,7 +19,7 @@ public class Order {
 	private int quantity;
 
 	@JsonProperty("shipDate")
-	private LocalDateTime shipDate;
+	public Date shipDate;
 
 	@JsonProperty("status")
 	private String status;
@@ -27,13 +27,24 @@ public class Order {
 	@JsonProperty("complete")
 	private boolean complete;
 
-	public Order (int id, int petId, int quantity, LocalDateTime shipDate, String status, boolean complete) {
+	public Order (int id, int petId, int quantity, Date shipDate, String status, boolean complete) {
 		this.id = id;
 		this.petId = petId;
 		this.quantity = quantity;
 		this.shipDate = shipDate;
 		this.status = status;
 		this.complete = complete;
+	}
+
+	@Override
+	public String toString() {
+		return "{\n" +
+				"  \"id\": " + id + ",\n" +
+				"  \"petId\": " + petId + ",\n" +
+				"  \"quantity\": " + quantity + ",\n" +
+				"  \"status\": " + status + ",\n" +
+				"  \"complete\": " + complete + "\n" +
+				"}";
 	}
 
 	public int getPetId(){
@@ -48,7 +59,7 @@ public class Order {
 		return id;
 	}
 
-	public LocalDateTime getShipDate(){
+	public Date getShipDate(){
 		return shipDate;
 	}
 
