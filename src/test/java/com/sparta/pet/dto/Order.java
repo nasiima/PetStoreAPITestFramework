@@ -45,7 +45,7 @@ public class Order {
 		return id;
 	}
 
-	public String getShipDate(){
+	public Date getShipDate(){
 		return shipDate;
 	}
 
