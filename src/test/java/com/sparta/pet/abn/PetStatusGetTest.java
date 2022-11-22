@@ -2,6 +2,7 @@ package com.sparta.pet.abn;
 
 import io.opentelemetry.sdk.metrics.internal.view.AttributesProcessor;
 import io.restassured.RestAssured;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -45,7 +46,6 @@ public class PetStatusGetTest {
                 .get("https://petstore3.swagger.io/api/v3/pet/findByStatus?status=available")
                 .then().header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
     }
-
     @Test
     @DisplayName("Test Access Header ")
     public void testAccessHeaderAvailable() {
@@ -54,6 +54,18 @@ public class PetStatusGetTest {
                 .get("https://petstore3.swagger.io/api/v3/pet/findByStatus?status=available")
                 .then().header("Access-Control-Allow-Headers", "Content-Type, api_key, Authorization");
     }
+
+//    @Test
+//    @DisplayName("Test Date")
+//    public void testDate(){
+//        var response = RestAssured
+//                .when()
+//                .get("https://petstore3.swagger.io/api/v3/pet/findByStatus?status=available");
+//                var date = response.getHeader("date");
+//        Assertions.assertEquals(LocalDate.now(), LocalDate.of());
+//    }
+
+
 
     @Test
     @DisplayName("Test GET response by status")
