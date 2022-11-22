@@ -24,13 +24,10 @@ public class PetResponse {
 	@JsonProperty("status")
 	private String status;
 
-	public PetResponse(List<String> photoUrls, String name, int id, Category category, List<TagsItem> tags, String status){
-		this.category = category;
+	public PetResponse(String name, int id, String status){
 		this.id = id;
 		this.status = status;
 		this.name = name;
-		this.tags = tags;
-		this.photoUrls = photoUrls;
 	}
 
 
