@@ -57,10 +57,10 @@ public class PetUrlTest {
                 .contentType(ContentType.JSON).post();
     }
 
-    @Test
-    public void fetchAlreadyAvailablePet() {
-        newPetId = petApi.iAddedANewPet();
-        petApi.iSearchForPetsId(newPetId);
-        petApi.theResponseContainsPetsId();
-    }
+//    @Test
+//    public void fetchAlreadyAvailablePet() {
+//        newPetId = petApi.iAddedANewPet();
+//        petApi.iSearchForPetsId(newPetId);
+//        petApi.theResponseContainsPetsId();
+//    }
 }
