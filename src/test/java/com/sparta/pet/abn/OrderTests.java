@@ -4,6 +4,8 @@ import io.restassured.RestAssured;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class OrderTests {
     @Test
@@ -49,5 +51,21 @@ public class OrderTests {
                 .when()
                 .get("https://petstore3.swagger.io/api/v3/store/order/6")
                 .then().assertThat().statusCode(404);
+    }
+
+    @ParameterizedTest
+    @DisplayName("Test header values when deleting order")
+    @CsvSource( {
+            "Content-Length, 0",
+            "Connection, keep-alive",
+            "Access-Control-Allow-Origin, *",
+            "Access-Control-Allow-Methods, GET, POST, DELETE, PUT",
+            "Access-Control-Allow-Headers, Content-Type, api_key, Authorization ",
+            "Access-Control-Expose-Headers, Content-Disposition",
+            "Server, Jetty(9.4.9.v20180320)"
+    })
+    public void headerValuesTest(String key, String value){
+        RestAssured.get("https://petstore3.swagger.io/api/v3/store/order/2")
+                .then().header(key, value);
     }
 }
