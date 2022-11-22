@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import net.bytebuddy.asm.Advice;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Order {
@@ -18,7 +19,7 @@ public class Order {
 	private int quantity;
 
 	@JsonProperty("shipDate")
-	private LocalDate shipDate;
+	private LocalDateTime shipDate;
 
 	@JsonProperty("status")
 	private String status;
@@ -26,7 +27,7 @@ public class Order {
 	@JsonProperty("complete")
 	private boolean complete;
 
-	public Order (int id, int petId, int quantity, LocalDate shipDate, String status, boolean complete) {
+	public Order (int id, int petId, int quantity, LocalDateTime shipDate, String status, boolean complete) {
 		this.id = id;
 		this.petId = petId;
 		this.quantity = quantity;
@@ -47,7 +48,7 @@ public class Order {
 		return id;
 	}
 
-	public LocalDate getShipDate(){
+	public LocalDateTime getShipDate(){
 		return shipDate;
 	}
 
