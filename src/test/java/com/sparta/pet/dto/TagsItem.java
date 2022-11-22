@@ -10,6 +10,11 @@ public class TagsItem{
 	@JsonProperty("id")
 	private int id;
 
+	public TagsItem(){
+		this.id = id;
+		this.name = name;
+	}
+
 	public String getName(){
 		return name;
 	}
