@@ -12,12 +12,13 @@ import static org.hamcrest.Matchers.*;
 import static net.serenitybdd.rest.SerenityRest.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class PostStoreOrderTests extends UIInteractions {
     @Test
     @DisplayName("Successful order post request")
     public void testOrderPostRequest() {
-        //Order order = new Order(10, 198772, 7, LocalDate.now().plusDays(1), "approved", true);
+        Order order = new Order(10, 198772, 7, LocalDateTime.now().plusDays(1), "approved", true);
 
         Order responseOrder = given()
                 .baseUri("https://petstore.swagger.io")
