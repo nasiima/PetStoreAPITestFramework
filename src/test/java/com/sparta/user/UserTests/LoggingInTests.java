@@ -1,6 +1,7 @@
 package com.sparta.user.UserTests;
 
-import com.sparta.user.stepDefinitions.LoggingInStepDefs;
+import com.sparta.user.stepdefinitions.LoggingInStepDefs;
+import com.sparta.user.stepdefinitions.LoggingInStepDefs;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

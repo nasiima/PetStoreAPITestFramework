@@ -1,4 +1,4 @@
-package com.sparta.user.stepDefinitions;
+package com.sparta.user.stepdefinitions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
@@ -16,9 +16,12 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 
 
-
 public class LoggingInStepDefs {
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> f107c509675d1c3711bdb9bad62e19fbb2db6c23
     String newUser = "{\n" +
             "  \"username\": \"poppybeans\",\n" +
             "  \"firstName\": \"Poppy\",\n" +
@@ -47,7 +50,6 @@ public class LoggingInStepDefs {
     public void the_response_contains(String string) {
         then().body(Matchers.contains(string));
     }
-
 
     @Given("I am logged in")
     public void i_am_logged_in() {
