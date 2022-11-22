@@ -1,4 +1,4 @@
-package com.sparta.user.stepDefinitions;
+package com.sparta.user.stepdefinitions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
