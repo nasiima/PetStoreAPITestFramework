@@ -6,31 +6,31 @@ import java.util.Date;
 
 public class Order {
 
+	@JsonProperty("id")
+	private int id;
+
 	@JsonProperty("petId")
 	private int petId;
 
 	@JsonProperty("quantity")
 	private int quantity;
 
-	@JsonProperty("id")
-	private int id;
-
 	@JsonProperty("shipDate")
 	private Date shipDate;
 
+	@JsonProperty("status")
+	private String status;
+	
 	@JsonProperty("complete")
 	private boolean complete;
 
-	@JsonProperty("status")
-	private String status;
-
-	public Order (int petId, int quantity, int id, Date shipDate, boolean complete, String status) {
+	public Order (int id, int petId, int quantity, Date shipDate, String status, boolean complete) {
+		this.id = id;
 		this.petId = petId;
 		this.quantity = quantity;
-		this.id = id;
 		this.shipDate = shipDate;
-		this.complete = complete;
 		this.status = status;
+		this.complete = complete;
 	}
 
 	public int getPetId(){
