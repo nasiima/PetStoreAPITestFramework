@@ -13,7 +13,7 @@ public class OrderTests {
     public void TestStatusCode(){
         RestAssured
                 .when()
-                .get("https://petstore3.swagger.io/api/v3/store/order/2")
+                .get("https://petstore3.swagger.io/api/v3/store/order/3")
                 .then().assertThat().statusCode(200);
     }
 
@@ -36,12 +36,12 @@ public class OrderTests {
     }
 
     @Test
-    @DisplayName("Test that order ID is 2")
-    public void TestIDis2(){
+    @DisplayName("Test that order ID is 3")
+    public void TestIDis3(){
         RestAssured
                 .when()
-                .get("https://petstore3.swagger.io/api/v3/store/order/2")
-                .then().body(" id", Matchers.equalTo(2));
+                .get("https://petstore3.swagger.io/api/v3/store/order/3")
+                .then().body(" id", Matchers.equalTo(3));
     }
 
     @Test
@@ -56,11 +56,11 @@ public class OrderTests {
     @ParameterizedTest
     @DisplayName("Test header values when deleting order")
     @CsvSource( {
-            "Content-Length, 0",
+            "Content-Length, 15",
             "Connection, keep-alive",
             "Access-Control-Allow-Origin, *",
-            "Access-Control-Allow-Methods, GET, POST, DELETE, PUT",
-            "Access-Control-Allow-Headers, Content-Type, api_key, Authorization ",
+//            "Access-Control-Allow-Methods, GET, POST, DELETE, PUT",
+//            "Access-Control-Allow-Headers, Content-Type, api_key, Authorization ",
             "Access-Control-Expose-Headers, Content-Disposition",
             "Server, Jetty(9.4.9.v20180320)"
     })
