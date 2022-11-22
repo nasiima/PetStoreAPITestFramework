@@ -1,27 +1,20 @@
-package com.sparta.user.stepdefinitions;
+package com.sparta.user.stepDefinitions;
 
-import io.cucumber.java.After;
-import io.cucumber.java.AfterAll;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
 import io.restassured.http.ContentType;
 import io.restassured.mapper.ObjectMapperType;
 import org.hamcrest.Matchers;
-import org.junit.runner.RunWith;
 import static net.serenitybdd.rest.SerenityRest.*;
-import static org.hamcrest.MatcherAssert.assertThat;
+
 
 
 
 public class LoggingInStepDefs {
 
-<<<<<<< HEAD
 
-=======
->>>>>>> f107c509675d1c3711bdb9bad62e19fbb2db6c23
     String newUser = "{\n" +
             "  \"username\": \"poppybeans\",\n" +
             "  \"firstName\": \"Poppy\",\n" +
@@ -50,6 +43,9 @@ public class LoggingInStepDefs {
     public void the_response_contains(String string) {
         then().body(Matchers.contains(string));
     }
+
+
+
 
     @Given("I am logged in")
     public void i_am_logged_in() {

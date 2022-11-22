@@ -1,20 +1,16 @@
-package com.sparta.user.stepdefinitions;
+package com.sparta.user.stepDefinitions;
 
-import io.cucumber.java.After;
-import io.cucumber.java.AfterAll;
-import io.cucumber.java.en.And;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.mapper.ObjectMapperType;
+
 import org.hamcrest.Matchers;
-import org.junit.runner.RunWith;
+
 import static net.serenitybdd.rest.SerenityRest.*;
-import static org.hamcrest.MatcherAssert.assertThat;
+
 
 public class UserStepDefinitions {
 
