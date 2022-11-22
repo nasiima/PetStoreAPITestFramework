@@ -19,8 +19,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class LoggingInStepDefs {
 
-
-
     String newUser = "{\n" +
             "  \"username\": \"poppybeans\",\n" +
             "  \"firstName\": \"Poppy\",\n" +
