@@ -15,3 +15,5 @@ public class PetStatusGetTest {
                 .then().assertThat().statusCode(200);
     }
 }
+
+
