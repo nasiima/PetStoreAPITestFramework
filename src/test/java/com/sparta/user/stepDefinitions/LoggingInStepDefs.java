@@ -16,9 +16,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 
 
-
 public class LoggingInStepDefs {
-
 
 
     String newUser = "{\n" +
@@ -49,7 +47,6 @@ public class LoggingInStepDefs {
     public void the_response_contains(String string) {
         then().body(Matchers.contains(string));
     }
-
 
     @Given("I am logged in")
     public void i_am_logged_in() {
