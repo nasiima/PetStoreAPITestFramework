@@ -2,6 +2,7 @@ package com.sparta.pet.dto;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.restassured.internal.ValidatableResponseOptionsImpl;
 
 public class Response{
 
@@ -46,4 +47,5 @@ public class Response{
 	public String getStatus(){
 		return status;
 	}
+
 }
