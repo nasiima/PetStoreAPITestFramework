@@ -1,6 +1,7 @@
 package com.sparta.pet.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import net.bytebuddy.asm.Advice;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -46,7 +47,7 @@ public class Order {
 		return id;
 	}
 
-	public Date getShipDate(){
+	public LocalDate getShipDate(){
 		return shipDate;
 	}
 
