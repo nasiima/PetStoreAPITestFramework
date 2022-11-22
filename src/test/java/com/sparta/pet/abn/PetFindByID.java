@@ -50,7 +50,7 @@ public class PetFindByID {
         RestAssured
                 .when()
                 .get("https://petstore3.swagger.io/api/v3/pet/5")
-                .then().body("category", Matchers.equalTo("<{id=1, name=Dogs}>"
+                .then().body("category", Matchers.equalTo(" {id=1, name=Dogs}"
                ));
     }
     @Test
@@ -62,6 +62,18 @@ public class PetFindByID {
                 .then().body("status", Matchers.equalTo("sold"
                 ));
     }
+
+    @Test
+    @DisplayName("Test that name is Dog 2")
+    public void TestNameIsDog2(){
+        RestAssured
+                .when()
+                .get("https://petstore3.swagger.io/api/v3/pet/5")
+                .then().body("name", Matchers.equalTo("Dog 2"
+                ));
+    }
+
+
     @ParameterizedTest
     @DisplayName("Test header values")
     @CsvSource( {
@@ -93,13 +105,16 @@ public class PetFindByID {
 //                .get("https://petstore3.swagger.io/api/v3/pet/5")
 //                .then().log().all();
 //    }
-//
+
+
+
+
 //    @Test
 //    @DisplayName("Test DELETE by ID")
 //    public void TestDeleteByID(){
 //        RestAssured
 //                .when()
 //                .get("https://petstore3.swagger.io/api/v3/pet/5")
-//                .then().assertThat().statusCode(200);
+//                .then().body().all().delete().assertThat().statusCode(204);
 //    }
 }
