@@ -2,6 +2,8 @@ package com.sparta.pet.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Date;
+
 public class Order {
 
 	@JsonProperty("petId")
@@ -14,7 +16,7 @@ public class Order {
 	private int id;
 
 	@JsonProperty("shipDate")
-	private String shipDate;
+	private Date shipDate;
 
 	@JsonProperty("complete")
 	private boolean complete;
@@ -22,27 +24,12 @@ public class Order {
 	@JsonProperty("status")
 	private String status;
 
-	public void setPetId(int petId) {
+	public Order (int petId, int quantity, int id, Date shipDate, boolean complete, String status) {
 		this.petId = petId;
-	}
-
-	public void setQuantity(int quantity) {
 		this.quantity = quantity;
-	}
-
-	public void setId(int id) {
 		this.id = id;
-	}
-
-	public void setShipDate(String shipDate) {
 		this.shipDate = shipDate;
-	}
-
-	public void setComplete(boolean complete) {
 		this.complete = complete;
-	}
-
-	public void setStatus(String status) {
 		this.status = status;
 	}
 
