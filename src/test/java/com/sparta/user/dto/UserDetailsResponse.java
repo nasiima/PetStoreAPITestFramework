@@ -59,4 +59,6 @@ public class UserDetailsResponse {
 	public String getUsername(){
 		return username;
 	}
+
+	
 }
