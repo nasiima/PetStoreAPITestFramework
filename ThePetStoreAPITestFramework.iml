@@ -29,18 +29,6 @@
     <orderEntry type="library" name="Maven: com.thoughtworks.xstream:xstream:1.4.19" level="project" />
     <orderEntry type="library" name="Maven: io.github.x-stream:mxparser:1.2.2" level="project" />
     <orderEntry type="library" name="Maven: xmlpull:xmlpull:1.1.3.1" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:cucumber-core:7.8.1" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:cucumber-gherkin:7.8.1" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:cucumber-gherkin-messages:7.8.1" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:gherkin:24.0.0" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:messages:19.1.4" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:tag-expressions:4.1.0" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:cucumber-expressions:16.0.0" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:datatable:7.8.1" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:cucumber-plugin:7.8.1" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:docstring:7.8.1" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:html-formatter:20.1.0" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:ci-environment:9.1.0" level="project" />
     <orderEntry type="library" name="Maven: io.cucumber:cucumber-java:7.8.1" level="project" />
     <orderEntry type="library" name="Maven: com.typesafe:config:1.4.2" level="project" />
     <orderEntry type="library" name="Maven: org.imgscalr:imgscalr-lib:4.2" level="project" />
@@ -212,7 +200,6 @@
     <orderEntry type="library" name="Maven: net.serenity-bdd:serenity-junit5:3.4.1" level="project" />
     <orderEntry type="library" name="Maven: org.junit.jupiter:junit-jupiter-api:5.9.1" level="project" />
     <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-commons:1.9.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apiguardian:apiguardian-api:1.1.2" level="project" />
     <orderEntry type="library" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.9.1" level="project" />
     <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-engine:1.9.1" level="project" />
     <orderEntry type="library" name="Maven: org.junit.jupiter:junit-jupiter-params:5.9.1" level="project" />
@@ -235,5 +222,19 @@
     <orderEntry type="library" name="Maven: io.rest-assured:json-path:5.2.0" level="project" />
     <orderEntry type="library" name="Maven: io.rest-assured:rest-assured-common:5.2.0" level="project" />
     <orderEntry type="library" name="Maven: io.rest-assured:xml-path:5.2.0" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:cucumber-junit:7.8.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apiguardian:apiguardian-api:1.1.2" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:cucumber-core:7.8.1" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:cucumber-gherkin:7.8.1" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:cucumber-gherkin-messages:7.8.1" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:gherkin:24.0.0" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:messages:19.1.4" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:tag-expressions:4.1.0" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:cucumber-expressions:16.0.0" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:datatable:7.8.1" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:cucumber-plugin:7.8.1" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:docstring:7.8.1" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:html-formatter:20.1.0" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:ci-environment:9.1.0" level="project" />
   </component>
 </module>
