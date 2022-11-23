@@ -53,7 +53,6 @@ public class UserLoginStepDefs {
 
         @When("I log in")
         public void i_log_in() {
-            when().get("https://petstore3.swagger.io/api/v3/user/logout");
             when().get("https://petstore3.swagger.io/api/v3/user/login?username=poppybeans&password=paws");
 
         }

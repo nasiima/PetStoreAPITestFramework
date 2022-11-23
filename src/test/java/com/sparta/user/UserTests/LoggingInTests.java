@@ -15,12 +15,7 @@ public class LoggingInTests {
     public static class loggingIn {
 
         UserLoginStepDefs userLoginStepDefs;
-
-
-
-
-
-
+        
         @Test
         public void logIn() {
             userLoginStepDefs.iAmAnAlreadyRegisteredUser();
