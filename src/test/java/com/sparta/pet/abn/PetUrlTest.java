@@ -1,14 +1,9 @@
 package com.sparta.pet.abn;
 
-import com.sparta.pet.dto.PetResponse;
 import com.sparta.pet.stepDefinitions.PetStepDefs;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.mapper.ObjectMapperType;
-import io.restassured.response.Response;
-import org.json.simple.JSONObject;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

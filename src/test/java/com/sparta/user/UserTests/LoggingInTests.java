@@ -2,11 +2,9 @@ package com.sparta.user.UserTests;
 
 import com.sparta.user.stepDefinitions.UserLoginStepDefs;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
-import org.json.simple.parser.ParseException;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-
-import java.io.IOException;
 
 public class LoggingInTests {
 
