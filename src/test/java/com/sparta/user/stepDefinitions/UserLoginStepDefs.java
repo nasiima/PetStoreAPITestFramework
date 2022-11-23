@@ -1,18 +1,31 @@
 package com.sparta.user.stepDefinitions;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sparta.user.dto.UserDetailsResponse;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
 import io.restassured.mapper.ObjectMapperType;
+import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import org.hamcrest.Matchers;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.junit.jupiter.api.AfterEach;
+
+import java.io.IOException;
+import java.io.Reader;
 
 import static net.serenitybdd.rest.SerenityRest.*;
 import static net.serenitybdd.rest.SerenityRest.then;
 
 public class UserLoginStepDefs {
+
+    Response response;
+    UserDetailsResponse udResponse;
+    private static JSONObject jsonObject = null;
 
 
 
@@ -53,7 +66,7 @@ public class UserLoginStepDefs {
 
 
         @When("I view my account details")
-        public void i_view_my_account_details() {
+        public void i_view_my_account_details(){
             when().get("https://petstore3.swagger.io/api/v3/user/poppybeans");
         }
 
