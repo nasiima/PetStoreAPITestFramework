@@ -74,7 +74,7 @@ public class PetFindByID {
                 .when()
                 .get("https://petstore3.swagger.io/api/v3/pet/5")
                 .then().body("category", Matchers.equalTo("{id=1, name=Dogs}"
-               ));
+                ));
     }
 
     @Test
@@ -139,11 +139,11 @@ public class PetFindByID {
     @DisplayName("Test POST new pet by ID")
     public void TestPostByID(){
         given().baseUri("https://petstore3.swagger.io")
-            .basePath("/api/v3/pet/20?name=nasiima&status=available")
-            .body(newPet, ObjectMapperType.GSON)
-            .accept(ContentType.JSON)
-            .contentType(ContentType.JSON).post();
-}
+                .basePath("/api/v3/pet/20?name=nasiima&status=available")
+                .body(newPet, ObjectMapperType.GSON)
+                .accept(ContentType.JSON)
+                .contentType(ContentType.JSON).post();
+    }
 
 
 
@@ -151,9 +151,9 @@ public class PetFindByID {
     @DisplayName("Test DELETE by ID status is 404")
     public void TestDeleteByID(){
 
-    RestAssured
-            .when()
-            .get("https://petstore3.swagger.io/api/v3/store/order/6")
-            .then().assertThat().statusCode(404);
-}
+        RestAssured
+                .when()
+                .get("https://petstore3.swagger.io/api/v3/store/order/6")
+                .then().assertThat().statusCode(404);
+    }
 }
