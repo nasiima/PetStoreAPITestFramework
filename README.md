@@ -72,7 +72,7 @@ git push
 ```
 5. Open a pull request. Go to [Pull requests](https://github.com/nasiima/PetStoreAPITestFramework/pulls) and pres "Make new request" button
 
-To stay updated:
+### To stay updated:
 1. Go to the local dev branch
 ```powershell
 git checkout dev
