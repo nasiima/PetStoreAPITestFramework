@@ -1,9 +1,15 @@
 package com.sparta.store.storeTests;
 
+import com.sparta.store.dto.Order;
+import io.restassured.mapper.ObjectMapperType;
 import net.serenitybdd.core.steps.UIInteractions;
+
+import org.joda.time.DateTime;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import io.restassured.http.ContentType;
+
+import java.time.LocalDate;
 
 import static org.hamcrest.Matchers.*;
 
@@ -13,7 +19,9 @@ public class PostStoreOrderTests extends UIInteractions {
     @Test
     @DisplayName("Successful order post request")
     public void testOrderPostRequest() {
-        given().body("{ \"id\": 10, \"petId\": 198772, \"quantity\": 7, \"shipDate\": \"2022-11-22T13:55:10.012Z\", \"status\": \"approved\", \"complete\": true }")
+//        given().body("{ \"id\": 10, \"petId\": 198772, \"quantity\": 7,  \"status\": \"approved\", \"complete\": true }")
+        Order order = new Order(10, 198772, 7,"approved", true );
+        given().body(order, ObjectMapperType.GSON)
                 .accept(ContentType.JSON)
                 .contentType(ContentType.JSON);
         when().post("https://petstore3.swagger.io/api/v3/store/order");

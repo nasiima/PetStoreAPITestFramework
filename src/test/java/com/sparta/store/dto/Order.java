@@ -1,10 +1,8 @@
 package com.sparta.store.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import net.bytebuddy.asm.Advice;
-
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 import java.util.Date;
 
 public class Order {
@@ -19,7 +17,7 @@ public class Order {
 	private int quantity;
 
 	@JsonProperty("shipDate")
-	public Date shipDate;
+	public String shipDate;
 
 	@JsonProperty("status")
 	private String status;
@@ -27,11 +25,20 @@ public class Order {
 	@JsonProperty("complete")
 	private boolean complete;
 
-	public Order (int id, int petId, int quantity, Date shipDate, String status, boolean complete) {
+	public Order (int id, int petId, int quantity, String shipDate, String status, boolean complete) {
 		this.id = id;
 		this.petId = petId;
 		this.quantity = quantity;
 		this.shipDate = shipDate;
+		this.status = status;
+		this.complete = complete;
+	}
+
+	public Order (int id, int petId, int quantity, String status, boolean complete) {
+		this.id = id;
+		this.petId = petId;
+		this.quantity = quantity;
+		this.shipDate = LocalDate.now().toString();
 		this.status = status;
 		this.complete = complete;
 	}
@@ -48,7 +55,7 @@ public class Order {
 		return id;
 	}
 
-	public Date getShipDate(){
+	public String getShipDate(){
 		return shipDate;
 	}
 
