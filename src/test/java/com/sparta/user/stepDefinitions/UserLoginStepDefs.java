@@ -1,0 +1,66 @@
+package com.sparta.user.stepDefinitions;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.restassured.http.ContentType;
+import io.restassured.mapper.ObjectMapperType;
+import org.hamcrest.Matchers;
+
+import static net.serenitybdd.rest.SerenityRest.*;
+import static net.serenitybdd.rest.SerenityRest.then;
+
+public class UserLoginStepDefs {
+
+
+
+        String newUser = """
+                {
+                  "username": "poppybeans",
+                  "firstName": "Poppy",
+                  "lastName": "Beans",
+                  "password": "paws",
+                  "phone": "555-1234",
+                  "userStatus": 1
+                }""";
+
+
+        @When("I log in")
+        public void i_log_in() {
+            when().get("https://petstore3.swagger.io/api/v3/user/logout");
+            when().get("https://petstore3.swagger.io/api/v3/user/login?username=poppybeans&password=paws");
+
+        }
+
+        @Then("The response contains {string}")
+        public void the_response_contains(String string) {
+            then().body(Matchers.contains(string));
+        }
+
+
+
+
+        @Given("I am logged in")
+        public void i_am_logged_in() {
+            given().get("https://petstore3.swagger.io/api/v3/user/login?username=poppybeans&password=paws");
+        }
+
+        @When("I view my account details")
+        public void i_view_my_account_details() {
+            when().get("https://petstore3.swagger.io/api/v3/user/poppybeans");
+        }
+
+        @Then("The details contain the correct information")
+        public void the_details_contain_the_correct_information() {
+            then().body("password", Matchers.equalTo("paws"));
+        }
+
+
+        @Given("I am an already registered user")
+        public void iAmAnAlreadyRegisteredUser() {
+            given().baseUri("https://petstore3.swagger.io").basePath("/api/v3/user")
+                .body(newUser, ObjectMapperType.GSON)
+                .accept(ContentType.JSON)
+                .contentType(ContentType.JSON).post();
+    }
+}
