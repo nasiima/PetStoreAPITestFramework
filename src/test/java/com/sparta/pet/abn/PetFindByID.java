@@ -145,8 +145,6 @@ public class PetFindByID {
             .contentType(ContentType.JSON).post();
 }
 
-
-
     @Test
     @DisplayName("Test DELETE by ID status is 404")
     public void TestDeleteByID(){
