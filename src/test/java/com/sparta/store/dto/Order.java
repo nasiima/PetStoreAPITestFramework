@@ -1,4 +1,4 @@
-package com.sparta.pet.dto;
+package com.sparta.store.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import net.bytebuddy.asm.Advice;
@@ -34,17 +34,6 @@ public class Order {
 		this.shipDate = shipDate;
 		this.status = status;
 		this.complete = complete;
-	}
-
-	@Override
-	public String toString() {
-		return "{\n" +
-				"  \"id\": " + id + ",\n" +
-				"  \"petId\": " + petId + ",\n" +
-				"  \"quantity\": " + quantity + ",\n" +
-				"  \"status\": " + status + ",\n" +
-				"  \"complete\": " + complete + "\n" +
-				"}";
 	}
 
 	public int getPetId(){
