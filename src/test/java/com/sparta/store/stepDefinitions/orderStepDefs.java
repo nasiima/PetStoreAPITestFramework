@@ -4,25 +4,22 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
+import io.restassured.http.ContentType;
 import static org.hamcrest.Matchers.*;
 import static net.serenitybdd.rest.SerenityRest.*;
 
 public class orderStepDefs {
-    static Response response;
 
-    @Given("I send requests to API {string}")
-    public void iSendRequestsToAPI(String URL) {
+    @Given("I want to send {string} as request body")
+    public void iWantToSendAsRequestBody(String requestBody) {
+        given().body(requestBody)
+                .accept(ContentType.JSON)
+                .contentType(ContentType.JSON);
     }
 
     @When("I send post request to {string}")
     public void iSendPostRequestTo(String URL) {
-        response = RestAssured.post(URL);
-    }
-
-    @And("I send Order object as request body")
-    public void iSendOrderObjectAsRequestBody() {
+        when().post(URL);
     }
 
     @When("I send get request to {string}")
@@ -35,33 +32,24 @@ public class orderStepDefs {
         then().statusCode(code);
     }
 
-    @And("I get Order object as response body")
-    public void iGetOrderObjectAsResponseBody() {
-    }
-
-    @And("I send empty request body")
-    public void iSendEmptyRequestBody() {
-    }
-
     @And("I get an error message {string}")
     public void iGetAnErrorMessage(String message) {
-        then().body("message", equalTo(message));
+        then().body("message", containsString(message));
     }
 
-    @And("I send empty Order object as a request body")
-    public void iSendEmptyOrderObjectAsARequestBody() {
-    }
-
-    @And("I get Order object with default values")
-    public void iGetOrderObjectWithDefaultValues() {
-    }
 
     @And("I get a map of status codes to quantities")
     public void iGetAMapOfStatusCodesToQuantities() {
-        then().body("approved", equalTo(12))
-                .body("placed", equalTo(107))
+        then().body("approved", equalTo(50))
+                .body("placed", equalTo(100))
                 .body("delivered", equalTo(50));
     }
 
-
+    @And("I get response object with values {int} {int} {int} {string}")
+    public void iGetResponseObjectWithValuesTrue(int id, int petId, int quantity, String complete) {
+        then().body("id", equalTo(id))
+                .body("petId", equalTo(petId))
+                .body("quantity", equalTo(quantity))
+                .body("complete", equalTo(Boolean.valueOf(complete)));
+    }
 }
