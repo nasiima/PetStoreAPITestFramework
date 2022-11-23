@@ -30,7 +30,7 @@ public class UserLoginStepDefs {
 
 
 
-        String newUser = """
+    String newUser = """
                 {
                   "username": "poppybeans",
                   "firstName": "Poppy",
@@ -41,45 +41,58 @@ public class UserLoginStepDefs {
                 }""";
 
 
-        @Given("I am an already registered user")
-        public void iAmAnAlreadyRegisteredUser() {
-            given().baseUri("https://petstore3.swagger.io")
+    @Given("I am an already registered user")
+    public void iAmAnAlreadyRegisteredUser() {
+        given().baseUri("https://petstore3.swagger.io")
                     .basePath("/api/v3/user")
                     .body(newUser, ObjectMapperType.GSON)
                     .accept(ContentType.JSON)
                     .contentType(ContentType.JSON).post();
-        }
+    }
 
 
-        @When("I log in")
-        public void i_log_in() {
-            when().get("https://petstore3.swagger.io/api/v3/user/login?username=poppybeans&password=paws");
+    @When("I log in")
+    public void i_log_in() {
+        when().get("https://petstore3.swagger.io/api/v3/user/login?username=poppybeans&password=paws");
 
-        }
+    }
 
-        @Then("The response contains {string}")
-        public void the_response_contains(String string) {
-            then().body(Matchers.contains(string));
-        }
-
-
-
-        @When("I view my account details")
-        public void i_view_my_account_details(){
-            when().get("https://petstore3.swagger.io/api/v3/user/poppybeans");
-        }
-
-        @Then("The details contain the correct information")
-        public void the_details_contain_the_correct_information() {
-            then().body("lastname", Matchers.equalTo("Beans"));
-        }
-
-        @AfterEach
-        public void tearDown() {
-            SerenityRest.delete("https://petstore3.swagger.io/api/v3/user/poppybeans");
-        }
+    @Then("The response contains {string}")
+    public void the_response_contains(String string) {
+        then().body(Matchers.contains(string));
+    }
 
 
 
+    @When("I view my account details")
+    public void i_view_my_account_details(){
+        when().get("https://petstore3.swagger.io/api/v3/user/poppybeans");
+    }
 
+    @Then("The details contain the correct information")
+    public void the_details_contain_the_correct_information() {
+        then().body("lastname", Matchers.equalTo("Beans"));
+    }
+
+    @AfterEach
+    public void tearDown() {
+        SerenityRest.delete("https://petstore3.swagger.io/api/v3/user/poppybeans");
+    }
+
+
+    @Given("I am an unregistered user")
+    public void iAmAnUnregisteredUser() {
+        given().baseUri("https://petstore3.swagger.io/api/v3/user")
+                .basePath("/login?username=notarealusername&password=notarealpassword");
+    }
+
+    @When("I try to log in")
+    public void iTryToLogIn() {
+            when().get();
+    }
+
+    @Then("The status code is {int}")
+    public void theStatusCodeIs(int statusCode) {
+            then().statusCode(Matchers.equalTo(statusCode));
+    }
 }
