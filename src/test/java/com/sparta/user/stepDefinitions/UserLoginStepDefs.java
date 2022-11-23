@@ -82,13 +82,13 @@ public class UserLoginStepDefs {
 
     @Given("I am an unregistered user")
     public void iAmAnUnregisteredUser() {
-        given().baseUri("https://petstore3.swagger.io/api/v3/user")
-                .basePath("/login?username=notarealusername&password=notarealpassword");
+        given().delete("https://petstore3.swagger.io/api/v3/user/notarealusername");
     }
 
     @When("I try to log in")
     public void iTryToLogIn() {
-            when().get();
+            when().get("https://petstore3.swagger.io/api/v3/user/" +
+                    "login?username=notarealusername&password=notarealpassword");
     }
 
     @Then("The status code is {int}")
