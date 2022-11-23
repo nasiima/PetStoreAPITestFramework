@@ -1,4 +1,4 @@
-package com.sparta.user.stepdefinitions;
+package com.sparta.user.stepDefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
