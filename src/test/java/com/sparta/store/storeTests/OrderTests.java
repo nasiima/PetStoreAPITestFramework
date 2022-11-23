@@ -1,4 +1,4 @@
-package com.sparta.pet.abn;
+package com.sparta.store.storeTests;
 
 import io.restassured.RestAssured;
 import org.hamcrest.Matchers;

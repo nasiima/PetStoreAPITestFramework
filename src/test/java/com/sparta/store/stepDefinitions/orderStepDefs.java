@@ -1,4 +1,4 @@
-package com.sparta.pet.stepDefinitions;
+package com.sparta.store.stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
