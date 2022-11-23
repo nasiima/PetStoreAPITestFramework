@@ -6,6 +6,10 @@ Feature: I want to send a post request with order details, so that I can place a
       When I send a get request to "https://petstore3.swagger.io/api/v3/user/logout"
       Then I should receive the message "User logged out"
 
+  Scenario: Logged in user logging out
+    When I send a get request to "https://petstore3.swagger.io/api/v3/user/logout"
+    Then I should get the response code 200
+
     Scenario: Logged in user updating account details
       When I send a put request to "https://petstore3.swagger.io/api/v3/user/cheesus"
       Then I should get the response code 200
