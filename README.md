@@ -9,9 +9,6 @@
 
   <p align="center">
      API testing framework for the Pet Store API: Testing responses to different requests!
-    <br />
-    <br />
-    <a href="https://github.com/bxshra99/SwagLabsTesting/tree/dev/SwagLabsTesting">Project Folder</a>
   </p>
 </div>
 
